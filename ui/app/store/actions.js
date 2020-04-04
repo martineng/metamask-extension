@@ -2181,6 +2181,16 @@ export function setMkrMigrationReminderTimestamp (timestamp) {
   }
 }
 
+export function setConnectedStatusPopoverHasBeenShown () {
+  return (dispatch) => {
+    background.setConnectedStatusPopoverHasBeenShown((err) => {
+      if (err) {
+        return dispatch(displayWarning(err.message))
+      }
+    })
+  }
+}
+
 export function loadingMethoDataStarted () {
   return {
     type: actionConstants.LOADING_METHOD_DATA_STARTED,
