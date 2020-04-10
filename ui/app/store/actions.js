@@ -2431,7 +2431,7 @@ export function getRequestAccountTabIds () {
   }
 }
 
-export function setOpenMetamaskTabsIDs (openMetaMaskTabIDs) {
+export function setOpenMetamaskTabIDs (openMetaMaskTabIDs) {
   return {
     type: actionConstants.SET_OPEN_METAMASK_TAB_IDS,
     value: openMetaMaskTabIDs,
@@ -2441,7 +2441,7 @@ export function setOpenMetamaskTabsIDs (openMetaMaskTabIDs) {
 export function getOpenMetamaskTabIds () {
   return async (dispatch) => {
     const openMetaMaskTabIDs = await pify(background.getOpenMetamaskTabIds).call(background)
-    dispatch(setOpenMetamaskTabsIDs(openMetaMaskTabIDs))
+    dispatch(setOpenMetamaskTabIDs(openMetaMaskTabIDs))
   }
 }
 
